@@ -1,14 +1,17 @@
 {
-    " builds ": [
-        {
-            "src:": "app.py",
-            "use": "@vercel/python"
-        }
+    "version": 2,
+    "builds": [
+      {
+        "src": "app.py",
+        "use": "@vercel/python"
+      }
     ],
-    " routes": [
-        {
-            "src": "/(.*)",
-            "dest": "app.py"
-        }
-    ]
-}
+    "routes": [
+      { "handle": "filesystem" },
+      { "src": "/(.*)", "dest": "/app.py" }
+    ],
+    "env": {
+      "YOUR_ENV_VARIABLE": "5000"
+    }
+  }
+  
